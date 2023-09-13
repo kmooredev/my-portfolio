@@ -1,0 +1,309 @@
+:root {
+  --blue: #022859;
+  --black: #011526;
+  --grey: #2d333a; /* #330443 */
+  --lime: #a0d94a;
+  --forest: #01261c;
+  --white: #e3ecfa;
+  font-size: 1.2rem;
+  --karla: 'Karla', monospace;
+  --merriweather: 'Merriweather', sans-serif;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: var(--merriweather);
+  background-color: var(--black);
+  color: var(--white);
+  font-size: var(--font-size);
+}
+
+h1,
+h2,
+h3 {
+  margin: 0;
+}
+
+a {
+  color: var(--lime);
+}
+
+a:hover {
+  color: var(--white);
+  text-decoration: none;
+}
+
+img {
+  width: 100%;
+}
+
+/* background color divs */
+
+.section-forest {
+  background-color: var(--forest);
+}
+
+.section-blue {
+  background-color: var(--grey);
+}
+
+.gradient {
+  background: linear-gradient(
+    90deg,
+    rgba(160, 217, 74, 1) 0%,
+    rgba(227, 236, 250, 1) 100%
+  );
+  height: 2px;
+}
+
+/* intro styles */
+
+#intro {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 4rem 1rem 10rem 1rem;
+  padding-bottom: 10rem;
+}
+
+#intro p {
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+#intro .name {
+  font-family: var(--merriweather);
+  font-size: 1rem;
+}
+
+.name span {
+  font-family: var(--karla);
+  font-size: 4rem;
+  color: var(--lime);
+  display: block;
+}
+
+#intro h2 {
+  font-size: 3.5rem;
+}
+
+/* Contact Styles */
+
+#contact {
+  width: 400px;
+  text-align: center;
+  margin: 0 auto;
+  padding: 4rem 0;
+}
+
+#contact p:last-child {
+  margin-top: 3rem;
+}
+
+/* Navigation */
+nav {
+  font-family: var(--merriweather);
+  font-size: 80%;
+  padding: 4rem 1rem;
+}
+
+nav h1 a {
+  font-family: var(--karla);
+  color: var(--white);
+}
+
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-flow: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+
+nav li:first-child {
+  flex-basis: 100%;
+  text-align: center;
+}
+
+nav [class*='fa-'] {
+  font-size: 150%;
+  color: var(--lime);
+}
+
+nav h1 [class*='fa-'] {
+  font-size: 100%;
+  color: var(--lime);
+}
+
+nav a {
+  color: var(--white);
+  text-decoration: none;
+  display: block;
+}
+
+nav a:hover {
+  color: var(--lime);
+}
+
+nav [class*='fa-']:hover {
+  color: var(--white);
+}
+
+nav h1 a:hover {
+  color: var(--lime);
+}
+
+.button {
+  background-color: var(--lime);
+  color: var(--black);
+  padding: 0.5rem;
+  border-radius: 5px;
+  font-family: var(--merriweather);
+  text-decoration: none;
+}
+
+.button:hover {
+  background-color: var(--white);
+  color: var(--black);
+}
+
+/* Footer */
+
+footer {
+  text-align: center;
+  padding: 4rem 0;
+}
+
+footer ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 2rem 0;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  gap: 3rem;
+  font-size: 3rem;
+}
+
+footer a:hover {
+  color: var(--white);
+}
+/* Project Styles */
+
+#projects {
+  padding: 4rem 1rem;
+}
+
+#projects h2 {
+  font-size: 2.5rem;
+  margin-bottom: calc(2.5rem * 1.5);
+}
+
+#projects h3 {
+  color: var(--white);
+}
+
+#projects h4 {
+  color: var(--lime);
+  font-family: var(--karla);
+  margin: 0;
+}
+
+.blackbox {
+  background-color: var(--black);
+  color: var(--white);
+  border-radius: 10px;
+  padding: 1rem;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+#projects ul {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+  gap: 1rem;
+  font-size: 1rem;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+#projects img {
+  margin: 2rem 0 4rem 0;
+  border-left: 1px solid var(--lime);
+  border-top: 1px solid var(--lime);
+  border-radius: 25px;
+  /* padding: 0.2rem; */
+}
+
+/* Media Queries */
+
+@media (min-width: 850px) {
+  nav {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  nav li:first-child {
+    flex-basis: auto;
+    text-align: left;
+    margin-right: auto;
+  }
+}
+
+@media (min-width: 800px) {
+  article {
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    gap: 1rem;
+  }
+
+  #projects {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  #projects img {
+    grid-column: 1/6;
+    grid-row: 1/2;
+  }
+
+  .text {
+    grid-column: 5/11;
+    grid-row: 1/2;
+    order: 2;
+    text-align: right;
+  }
+
+  #projects ul {
+    justify-content: flex-end;
+  }
+
+  .reverse .text {
+    grid-column: 1/7;
+    order: 1;
+    text-align: left;
+  }
+
+  #projects .reverse img {
+    grid-column: 6/11;
+  }
+
+  #projects .reverse ul {
+    justify-content: flex-start;
+  }
+}
